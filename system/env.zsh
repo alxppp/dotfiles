@@ -1,1 +1,2 @@
-export EDITOR='atom'
+export EDITOR='subl'
+export VISUAL='vim'
