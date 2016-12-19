@@ -1,0 +1,5 @@
+[user]
+        name = Alexander Popp
+        email = alxppp@googlemail.com
+[credential]
+        helper = osxkeychain
