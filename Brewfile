@@ -1,6 +1,7 @@
 cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
+tap 'ravenac95/sudolikeaboss' # For sudolikeaboss
 
 brew 'casperjs'
 brew 'cmake'
