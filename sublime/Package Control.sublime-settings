@@ -1,0 +1,23 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"BracketHighlighter",
+		"EditorConfig",
+		"FileDiffs",
+		"Git",
+		"Origami",
+		"Package Control",
+		"Pretty JSON",
+		"Protocol Buffer Syntax",
+		"RawLineEdit",
+		"SCSS",
+		"SideBarEnhancements",
+		"Swift",
+		"Theme - Soda",
+		"VHDL"
+	]
+}
