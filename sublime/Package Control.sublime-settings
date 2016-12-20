@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"BracketHighlighter",
+		"DashDoc",
 		"EditorConfig",
 		"FileDiffs",
 		"Git",
