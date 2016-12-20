@@ -13,12 +13,12 @@ hs.window.animationDuration = 0;
 
 hyper = { 'cmd', 'alt', 'ctrl' }
 keyMap = { activateAudirvanaPlus = 'A', resizeWindowBottomLeft = 'B', activateSafari = 'C',
-           activateCalendar = 'D', activateFinder = 'F', toggleWindowFullscreen = 'G', resizeWindowLeft = 'H',
-           activateSpotify = 'I', resizeWindowBottom = 'J', resizeWindowTop = 'K', resizeWindowRight = 'L',
-           activateMail = 'M', activateMessages = 'N', activateOmniFocus = 'O', resizeWindowTopRight = 'P',
-           activatePreview = 'R', activateSublimeText = 'S', activateiTerm = 'T', resizeWindowMaximize = 'U',
-           activateChrome = 'V', activateTower = 'W', lockScreen = 'X', resizeWindowTopLeft = 'Y', activateFranz = 'Z',
-           resizeWindowBottomRight = '.' }
+           activateCalendar = 'D', caffeinate = 'E', activateFinder = 'F', toggleWindowFullscreen = 'G',
+           resizeWindowLeft = 'H', activateSpotify = 'I', resizeWindowBottom = 'J', resizeWindowTop = 'K',
+           resizeWindowRight = 'L', activateMail = 'M', activateMessages = 'N', activateOmniFocus = 'O',
+           resizeWindowTopRight = 'P', activatePreview = 'R', activateSublimeText = 'S', activateiTerm = 'T',
+           resizeWindowMaximize = 'U', activateChrome = 'V', activateTower = 'W', lockScreen = 'X',
+           resizeWindowTopLeft = 'Y', activateFranz = 'Z', resizeWindowBottomRight = '.' }
 
 -- Helpers ================================================
 
@@ -175,12 +175,14 @@ hs.hotkey.bind(hyper, keyMap['lockScreen'], function()
   hs.caffeinate.lockScreen()
 end)
 
-hs.hotkey.bind(hyper, 'f11', nil, function()
-  --
-  hs.timer.doAfter(1, function()
-    --hs.alert.show('moin')
-    hs.eventtap.keyStroke({'ctrl'}, 'f11')
-  end)
+-- Caffeinate ===================================
+
+hs.hotkey.bind(hyper, keyMap['caffeinate'], nil, function()
+  if hs.caffeinate.toggle("displayIdle") then
+        hs.alert.show('Caffeinate enabled')
+    else
+        hs.alert.show('Caffeinate disabled')
+    end
 end)
 
 -- Watchers ===============================================
