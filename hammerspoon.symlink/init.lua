@@ -17,7 +17,7 @@ keyMap = { activateAudirvanaPlus = 'A', resizeWindowBottomLeft = 'B', activateSa
            activateSpotify = 'I', resizeWindowBottom = 'J', resizeWindowTop = 'K', resizeWindowRight = 'L',
            activateMail = 'M', activateMessages = 'N', activateOmniFocus = 'O', resizeWindowTopRight = 'P',
            activatePreview = 'R', activateSublimeText = 'S', activateiTerm = 'T', resizeWindowMaximize = 'U',
-           activateChrome = 'V', activateTower = 'W', lockScreen = 'X', activateFranz = 'Y', resizeWindowTopLeft = 'Z',
+           activateChrome = 'V', activateTower = 'W', lockScreen = 'X', resizeWindowTopLeft = 'Y', activateFranz = 'Z',
            resizeWindowBottomRight = '.' }
 
 -- Helpers ================================================
