@@ -42,3 +42,8 @@ unset config_files
 
 # load zsh-syntax-highlighting
 source $ZSH/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# load zsh-history-substring-search
+source $ZSH/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
