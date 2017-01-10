@@ -1,0 +1,47 @@
+# Set the default shell to ZSH
+set-option -g default-shell $SHELL
+
+# Improve colors
+set -g default-terminal 'screen-256color'
+
+# Act like vim
+setw -g mode-keys vi
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+bind-key -r C-h select-window -t :-
+bind-key -r C-l select-window -t :+
+
+# Enable mouse scolling
+set -g mouse on
+
+# Sane mouse scrolling
+set -g terminal-overrides 'xterm*:smcup@:rmcup@'
+
+# Pane resizing
+bind ( resize-pane -L 5
+bind ) resize-pane -R 5
+bind - resize-pane -D 5
+bind + resize-pane -U 5
+
+# Start window numbers at 1 to match keyboard order with tmux window order
+set -g base-index 1
+set-window-option -g pane-base-index 1
+
+# Renumber windows sequentially after closing any of them
+set -g renumber-windows on
+
+# Make sure tmux reports focus changes for vitality.vim
+set -g focus-events on
+
+# Automatically set window title
+set-window-option -g automatic-rename on
+
+# Soften status bar color from harsh green to light gray
+set -g status-bg '#666666'
+set -g status-fg '#aaaaaa'
+
+# Increase scrollback lines
+set -g history-limit 10000
+
