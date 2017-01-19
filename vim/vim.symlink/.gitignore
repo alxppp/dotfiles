@@ -1,1 +1,18 @@
+# Vundle
 bundle/
+
+# Swap
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+
+# Session
+Session.vim
+
+# Temporary
+.backupdir/
+.netrwhist
+*~
+
+# Auto-generated tag files
+tags
+

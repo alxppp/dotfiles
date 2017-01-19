@@ -124,6 +124,9 @@ set shiftround
 " Mappings
 "
 
+" Use jk as Esc key
+inoremap jk <Esc>
+
 " Map leader
 let mapleader = ","
 
