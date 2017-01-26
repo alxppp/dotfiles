@@ -22,6 +22,7 @@ brew 'switchaudio-osx'
 brew 'tmux'
 brew 'valgrind'
 brew 'wget'
+brew 'htop'
 
 # cask '1password'
 # cask 'adium'
