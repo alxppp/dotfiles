@@ -7,6 +7,7 @@
 	[
 		"BracketHighlighter",
 		"DashDoc",
+		"Dockerfile Syntax Highlighting",
 		"EditorConfig",
 		"FileDiffs",
 		"Git",
@@ -19,6 +20,7 @@
 		"SideBarEnhancements",
 		"Swift",
 		"Theme - Soda",
+		"TypeScript",
 		"VHDL",
 		"VimL"
 	]
