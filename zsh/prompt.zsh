@@ -54,7 +54,7 @@ prompt_context() {
 
   if [[ "$user" != "$DEFAULT_USER" || -n "$SSH_CONNECTION" ]]; then
     #prompt_segment red default " %(!.%{%F{yellow}%}.)$user@%m "
-    prompt_segment red default " %(!.%{%F{yellow}%}.)$user@BK3 "
+    prompt_segment red default " %(!.%{%F{yellow}%}.)$user@BK4 "
   fi
 }
 
