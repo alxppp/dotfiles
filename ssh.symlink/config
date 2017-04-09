@@ -1,0 +1,29 @@
+Host *
+  SendEnv LANG LC_*
+
+Host aps
+  HostName alexanderpopp.de
+  User aps
+
+Host gitserver
+  HostName git.alexanderpopp.de
+  Port 22448
+  User git
+
+Host dev
+  HostName dev.alexanderpopp.de
+  Port 22338
+  User root
+
+Host do
+  HostName 138.68.72.221
+  User root
+
+Host he
+  HostName 88.99.190.172
+  User root
+
+Host tabshare
+  HostName tabshare.de
+  Port 22492
+  User root
