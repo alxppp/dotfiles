@@ -1,2 +1,2 @@
-export EDITOR='subl'
+export EDITOR='subl -n -w'
 export VISUAL='vim'
