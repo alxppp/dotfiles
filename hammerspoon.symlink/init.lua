@@ -16,9 +16,9 @@ keyMap = { activateAudirvanaPlus = 'A', resizeWindowBottomLeft = 'B', activateSa
            activateCalendar = 'D', caffeinate = 'E', activateFinder = 'F', toggleWindowFullscreen = 'G',
            resizeWindowLeft = 'H', activateSpotify = 'I', resizeWindowBottom = 'J', resizeWindowTop = 'K',
            resizeWindowRight = 'L', activateMail = 'M', activateMessages = 'N', activateOmniFocus = 'O',
-           resizeWindowTopRight = 'P', activatePreview = 'R', activateSublimeText = 'S', activateiTerm = 'T',
-           resizeWindowMaximize = 'U', activateChrome = 'V', activateTower = 'W', lockScreen = 'X',
-           resizeWindowTopLeft = 'Y', activateFranz = 'Z', resizeWindowBottomRight = '.' }
+           resizeWindowTopRight = 'P', activateSequelPro = 'Q', activatePreview = 'R', activateSublimeText = 'S',
+           activateiTerm = 'T', resizeWindowMaximize = 'U', activateChrome = 'V', activateTower = 'W', lockScreen = 'X',
+           resizeWindowTopLeft = 'Y', activateFranz = 'Z', activateStickies = ',', resizeWindowBottomRight = '.' }
 
 -- Helpers ================================================
 
@@ -162,7 +162,9 @@ fnutils.each({
   { key = keyMap['activateCalendar'], app = 'Calendar' },
   { key = keyMap['activateSpotify'], app = 'Spotify' },
   { key = keyMap['activatePreview'], app = 'Preview' },
-  { key = keyMap['activateChrome'], app = 'Google Chrome' }
+  { key = keyMap['activateChrome'], app = 'Google Chrome' },
+  { key = keyMap['activateSequelPro'], app = 'Sequel Pro' },
+  { key = keyMap['activateStickies'], app = 'Stickies' }
 }, function(object)
   hs.hotkey.bind(hyper, object.key, function()
     hs.application.launchOrFocus(object.app)
