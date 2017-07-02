@@ -18,7 +18,8 @@ keyMap = { activateAudirvanaPlus = 'A', resizeWindowBottomLeft = 'B', activateSa
            resizeWindowRight = 'L', activateMail = 'M', activateMessages = 'N', activateOmniFocus = 'O',
            resizeWindowTopRight = 'P', activateSequelPro = 'Q', activatePreview = 'R', activateSublimeText = 'S',
            activateiTerm = 'T', resizeWindowMaximize = 'U', activateChrome = 'V', activateTower = 'W', lockScreen = 'X',
-           resizeWindowTopLeft = 'Y', activateFranz = 'Z', activateStickies = ',', resizeWindowBottomRight = '.' }
+           resizeWindowTopLeft = 'Y', activateFranz = 'Z', activateStickies = ',', resizeWindowBottomRight = '.',
+           skipSong = ']' }
 
 -- Helpers ================================================
 
@@ -185,6 +186,12 @@ hs.hotkey.bind(hyper, keyMap['caffeinate'], nil, function()
     else
         hs.alert.show('Caffeinate disabled')
     end
+end)
+
+-- Spotify ======================================
+
+hs.hotkey.bind(hyper, keyMap['skipSong'], nil, function()
+  hs.spotify.next()
 end)
 
 -- Watchers ===============================================
