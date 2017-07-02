@@ -24,6 +24,11 @@ Host he
   User root
 
 Host tabshare
-  HostName tabshare.de
+  HostName tabshare.io
   Port 22492
+  User root
+
+Host tabsharedev
+  HostName tabshare.io
+  Port 22338
   User root
