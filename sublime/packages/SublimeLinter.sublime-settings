@@ -1,0 +1,27 @@
+{
+    "user": {
+        "error_color": "D02000",
+        "gutter_theme": "Packages/SublimeLinter/gutter-themes/Default/Default.gutter-theme",
+        "gutter_theme_excludes": [],
+        "linters": {
+            "rubocop": {
+                "@disable": false,
+                "args": [],
+                "excludes": []
+            }
+        },
+        "mark_style": "outline",
+        "paths": {
+            "linux": [],
+            "osx": [
+                "~/.rbenv/shims"
+            ],
+            "windows": []
+        },
+        "tooltip_fontsize": "1rem",
+        "tooltip_theme": "Packages/SublimeLinter/tooltip-themes/Default/Default.tooltip-theme",
+        "tooltip_theme_excludes": [],
+        "tooltips": true,
+        "warning_color": "DDB700"
+    }
+}

@@ -1,6 +1,6 @@
 {
 	"always_show_minimap_viewport": true,
-	"color_scheme": "Packages/User/Palo Oscuro.tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Palo Oscuro (SL).tmTheme",
 	"detect_indentation": false,
 	"draw_white_space": "all",
 	"font_size": 14,
