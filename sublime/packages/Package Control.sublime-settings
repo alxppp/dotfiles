@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"ANSIescape",
+		"Babel",
 		"BracketHighlighter",
 		"DashDoc",
 		"Dockerfile Syntax Highlighting",
