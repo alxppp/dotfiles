@@ -25,6 +25,7 @@
 		"Search in Project",
 		"SideBarEnhancements",
 		"SublimeLinter",
+		"SublimeLinter-contrib-eslint",
 		"SublimeLinter-rubocop",
 		"Swift",
 		"Table Editor",
