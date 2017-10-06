@@ -45,3 +45,7 @@ set -g status-fg '#aaaaaa'
 # Increase scrollback lines
 set -g history-limit 10000
 
+# Fix macOS clipboard
+set-option -g default-command "reattach-to-user-namespace -l zsh"
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
+bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
