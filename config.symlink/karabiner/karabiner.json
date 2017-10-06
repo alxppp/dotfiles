@@ -46,6 +46,7 @@
             "devices": [
                 {
                     "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": {},
                     "identifiers": {
                         "is_keyboard": true,
                         "is_pointing_device": false,
@@ -53,7 +54,20 @@
                         "vendor_id": 1452
                     },
                     "ignore": false,
-                    "keyboard_type": 41
+                    "keyboard_type": 41,
+                    "simple_modifications": {}
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": {},
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 34304,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "simple_modifications": {}
                 }
             ],
             "fn_function_keys": {
@@ -72,7 +86,10 @@
             },
             "name": "Default profile",
             "selected": true,
-            "simple_modifications": {},
+            "simple_modifications": {
+                "grave_accent_and_tilde": "non_us_backslash",
+                "non_us_backslash": "grave_accent_and_tilde"
+            },
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
                 "keyboard_type": "iso"
