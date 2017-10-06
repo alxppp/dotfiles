@@ -32,3 +32,8 @@ Host tabsharedev
 Host fra1
   HostName 138.68.99.52
   User root
+
+Host ke
+  HostName ke.alexanderpopp.de
+  Port 22662
+  User hannapopp
