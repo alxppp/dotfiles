@@ -12,7 +12,7 @@ hs.window.animationDuration = 0;
 -- Aliases ================================================
 
 hyper = { 'cmd', 'alt', 'ctrl' }
-keyMap = { activateAudirvanaPlus = 'A', resizeWindowBottomLeft = 'B', activateSafari = 'C',
+keyMap = { activatePaw = 'A', resizeWindowBottomLeft = 'B', activateSafari = 'C',
            activateCalendar = 'D', caffeinate = 'E', activateFinder = 'F', toggleWindowFullscreen = 'G',
            resizeWindowLeft = 'H', activateSpotify = 'I', resizeWindowBottom = 'J', resizeWindowTop = 'K',
            resizeWindowRight = 'L', activateMail = 'M', activateMessages = 'N', activateOmniFocus = 'O',
@@ -157,7 +157,7 @@ fnutils.each({
   { key = keyMap['activateMail'], app = 'Mail' },
   { key = keyMap['activateFranz'], app = 'Franz' },
   { key = keyMap['activateOmniFocus'], app = 'OmniFocus' },
-  { key = keyMap['activateAudirvanaPlus'], app = 'Audirvana Plus'},
+  { key = keyMap['activatePaw'], app = 'Paw'},
   { key = keyMap['activateTower'], app = 'Tower' },
   { key = keyMap['activateMessages'], app = 'Messages' },
   { key = keyMap['activateCalendar'], app = 'Calendar' },
