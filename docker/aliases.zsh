@@ -1,5 +1,6 @@
 alias d='docker $*'
 alias d-c='LOCALIP=$(localip) docker-compose $*'
+alias d-cp='LOCALIP=$(localip) docker-compose -f docker-compose.yml -f docker-compose.prod.yml $*'
 alias dap='d-c exec app $*'
 alias dps='docker ps -a --format="table {{.ID}}\t{{.Status}}\t{{.Ports}}\t{{.Names}}"'
 alias dclock='/usr/local/bin/docker run --rm --privileged alpine hwclock -s'
