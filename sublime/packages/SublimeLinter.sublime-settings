@@ -7,6 +7,11 @@
         "gutter_theme_excludes": [],
         "lint_mode": "background",
         "linters": {
+            "eslint": {
+                "@disable": false,
+                "args": [],
+                "excludes": []
+            },
             "rubocop": {
                 "@disable": false,
                 "args": [],
@@ -46,6 +51,7 @@
         "tooltip_theme": "Packages/SublimeLinter/tooltip-themes/Default/Default.tooltip-theme",
         "tooltip_theme_excludes": [],
         "tooltips": false,
+        "use_current_shell_path": false,
         "warning_color": "DDB700",
         "wrap_find": true
     }
