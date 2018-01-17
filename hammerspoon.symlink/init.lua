@@ -18,7 +18,7 @@ keyMap = { activatePaw = 'A', resizeWindowBottomLeft = 'B', activateSafari = 'C'
            resizeWindowRight = 'L', activateMail = 'M', activateMessages = 'N', activateOmniFocus = 'O',
            resizeWindowTopRight = 'P', activateSequelPro = 'Q', activatePreview = 'R', activateSublimeText = 'S',
            activateiTerm = 'T', resizeWindowMaximize = 'U', activateChrome = 'V', activateTower = 'W', lockScreen = 'X',
-           resizeWindowTopLeft = 'Y', activateFranz = 'Z', activateStickies = ',', resizeWindowBottomRight = '.',
+           resizeWindowTopLeft = 'Y', activateTimer = 'Z', activateStickies = ',', resizeWindowBottomRight = '.',
            skipSong = ']' }
 
 -- Helpers ================================================
@@ -155,7 +155,7 @@ fnutils.each({
   { key = keyMap['activateSublimeText'], app = 'Sublime Text' },
   { key = keyMap['activateiTerm'], app = 'iTerm' },
   { key = keyMap['activateMail'], app = 'Mail' },
-  { key = keyMap['activateFranz'], app = 'Franz' },
+  { key = keyMap['activateTimer'], app = 'Timer' },
   { key = keyMap['activateOmniFocus'], app = 'OmniFocus' },
   { key = keyMap['activatePaw'], app = 'Paw'},
   { key = keyMap['activateTower'], app = 'Tower' },
