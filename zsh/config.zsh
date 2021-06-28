@@ -1,6 +1,9 @@
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
 fpath=($ZSH/functions $fpath)
 
 autoload -U $ZSH/functions/*(:t)

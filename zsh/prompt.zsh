@@ -69,7 +69,7 @@ prompt_status() {
   [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}$LIGHTNING"
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}$GEAR"
 
-  [[ -n "$symbols" ]] && prompt_segment $PRIMARY_FG default " $symbols "
+            [[ -n "$symbols" ]] && prompt_segment $PRIMARY_FG default " $symbols "
 }
 
 git_branch() {
@@ -128,12 +128,17 @@ battery_status() {
 
 draw_prompt() {
   RETVAL=$?
-  CURRENT_BG='NONE'
-  prompt_status
-  prompt_context
-  directory_path
-  #ggit
-  prompt_end
+
+  if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    print -n "$(cpwd) $ "
+  else
+    CURRENT_BG='NONE'
+    prompt_status
+    prompt_context
+    directory_path
+    # ggit
+    prompt_end
+  fi
 }
 
 export PROMPT=$'$(draw_prompt) '

@@ -2,14 +2,35 @@
     "editor.cursorBlinking": "smooth",
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "all",
-    "editor.tabSize": 2,
+    "editor.tabSize": 8,
     "editor.wordWrapColumn": 120,
     "git.autofetch": true,
+    "gitlens.mode.statusBar.enabled": false,
     "remote.SSH.enableX11Forwarding": false,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
+    "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.copyOnSelection": true,
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.enableBell": true,
-    "terminal.integrated.scrollback": 5000
+    "terminal.integrated.fontFamily": "Menlo for Powerline",
+    "terminal.integrated.scrollback": 5000,
+    "window.newWindowDimensions": "maximized",
+    "vim.easymotion": true,
+    "vim.useSystemClipboard": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.startInInsertMode": true,
+    "vim.overrideCopy": false,
+    "editor.fontSize": 14,
+    "editor.cursorStyle": "line",
+    "editor.insertSpaces": false,
+    "editor.lineNumbers": "on",
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "editor.wordWrap": "off"
 }

@@ -12,10 +12,10 @@ hs.window.animationDuration = 0;
 -- Aliases ================================================
 
 hyper = { 'cmd', 'alt', 'ctrl' }
-keyMap = { activatePaw = 'A', resizeWindowBottomLeft = 'B', activateSafari = 'C',
-           activateCalendar = 'D', caffeinate = 'E', activateFinder = 'F', toggleWindowFullscreen = 'G',
+keyMap = { activatePaw = 'A', resizeWindowBottomLeft = 'B', activateVSCode = 'C', toggleScreen = 'D',
+           caffeinate = 'E', activateFinder = 'F', toggleWindowFullscreen = 'G',
            resizeWindowLeft = 'H', activateSpotify = 'I', resizeWindowBottom = 'J', resizeWindowTop = 'K',
-           resizeWindowRight = 'L', activateMail = 'M', activateMessages = 'N', activateOmniFocus = 'O',
+           resizeWindowRight = 'L', activateMail = 'M', activateOmniFocus = 'O',
            resizeWindowTopRight = 'P', activateSequelPro = 'Q', activatePreview = 'R', activateSublimeText = 'S',
            activateiTerm = 'T', resizeWindowMaximize = 'U', activateChrome = 'V', activateTower = 'W', lockScreen = 'X',
            resizeWindowTopLeft = 'Y', activateTimer = 'Z', activateStickies = ',', resizeWindowBottomRight = '.',
@@ -138,6 +138,12 @@ hs.hotkey.bind(hyper, keyMap['toggleWindowFullscreen'], function()
   hs.window.focusedWindow():toggleFullscreen()
 end)
 
+-- Move window to next screen
+hs.hotkey.bind(hyper, keyMap['toggleScreen'], function()
+  win = hs.window.focusedWindow()
+  win:moveToScreen(win.screen:next())
+end)
+
 -- Resize window to alert position
 --hs.hotkey.bind(hyper, keyMap['resizeWindowAlert'], function()
 --  setWindowFrame(hs.window.focusedWindow(), function(screenFrame)
@@ -151,7 +157,7 @@ end)
 
 fnutils.each({
   { key = keyMap['activateFinder'], app = 'Finder' },
-  { key = keyMap['activateSafari'], app = 'Safari' },
+  { key = keyMap['activateVSCode'], app = 'Visual Studio Code' },
   { key = keyMap['activateSublimeText'], app = 'Sublime Text' },
   { key = keyMap['activateiTerm'], app = 'iTerm' },
   { key = keyMap['activateMail'], app = 'Mail' },
@@ -159,8 +165,7 @@ fnutils.each({
   { key = keyMap['activateOmniFocus'], app = 'OmniFocus' },
   { key = keyMap['activatePaw'], app = 'Paw'},
   { key = keyMap['activateTower'], app = 'Tower' },
-  { key = keyMap['activateMessages'], app = 'Messages' },
-  { key = keyMap['activateCalendar'], app = 'Calendar' },
+
   { key = keyMap['activateSpotify'], app = 'Spotify' },
   { key = keyMap['activatePreview'], app = 'Preview' },
   { key = keyMap['activateChrome'], app = 'Google Chrome' },
