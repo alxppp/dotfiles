@@ -12,14 +12,27 @@ hs.window.animationDuration = 0;
 -- Aliases ================================================
 
 hyper = { 'cmd', 'alt', 'ctrl' }
-keyMap = { activatePaw = 'A', resizeWindowBottomLeft = 'B', activateVSCode = 'C', toggleScreen = 'D',
-           caffeinate = 'E', activateFinder = 'F', toggleWindowFullscreen = 'G',
-           resizeWindowLeft = 'H', activateSpotify = 'I', resizeWindowBottom = 'J', resizeWindowTop = 'K',
-           resizeWindowRight = 'L', activateMail = 'M', activateOmniFocus = 'O',
-           resizeWindowTopRight = 'P', activateSequelPro = 'Q', activatePreview = 'R', activateSublimeText = 'S',
-           activateiTerm = 'T', resizeWindowMaximize = 'U', activateChrome = 'V', activateTower = 'W', lockScreen = 'X',
-           resizeWindowTopLeft = 'Y', activateTimer = 'Z', activateStickies = ',', resizeWindowBottomRight = '.',
-           skipSong = ']' }
+keyMap = {
+  resizeWindowBottomLeft = 'B',
+  activateChrome = 'C',
+  activateVSCode = 'V',
+  toggleScreen = 'D',
+  activateFinder = 'F',
+  toggleWindowFullscreen = 'G',
+  resizeWindowLeft = 'H',
+  activateSpotify = 'I',
+  resizeWindowBottom = 'J',
+  resizeWindowTop = 'K',
+  resizeWindowRight = 'L',
+  resizeWindowTopRight = 'P',
+  activatePreview = 'R',
+  activateSlack = 'S',
+  activateiTerm = 'T',
+  resizeWindowMaximize = 'U',
+  resizeWindowTopLeft = 'Y',
+  activateStickies = ',',
+  resizeWindowBottomRight = '.'
+}
 
 -- Helpers ================================================
 
@@ -144,59 +157,21 @@ hs.hotkey.bind(hyper, keyMap['toggleScreen'], function()
   win:moveToScreen(win.screen:next())
 end)
 
--- Resize window to alert position
---hs.hotkey.bind(hyper, keyMap['resizeWindowAlert'], function()
---  setWindowFrame(hs.window.focusedWindow(), function(screenFrame)
---    width = screenFrame.w * 0.91
---    height = screenFrame.h * 0.91
---    return hs.geometry.rect(screenFrame.w / 2 - width / 2, screenFrame.h / 2 - height / 2 + 22 - 14, width, height)
---  end)
---end)
-
 -- Launch and focus applications ================
 
 fnutils.each({
   { key = keyMap['activateFinder'], app = 'Finder' },
   { key = keyMap['activateVSCode'], app = 'Visual Studio Code' },
-  { key = keyMap['activateSublimeText'], app = 'Sublime Text' },
   { key = keyMap['activateiTerm'], app = 'iTerm' },
-  { key = keyMap['activateMail'], app = 'Mail' },
-  { key = keyMap['activateTimer'], app = 'Timer' },
-  { key = keyMap['activateOmniFocus'], app = 'OmniFocus' },
-  { key = keyMap['activatePaw'], app = 'Paw'},
-  { key = keyMap['activateTower'], app = 'Tower' },
-
   { key = keyMap['activateSpotify'], app = 'Spotify' },
   { key = keyMap['activatePreview'], app = 'Preview' },
   { key = keyMap['activateChrome'], app = 'Google Chrome' },
-  { key = keyMap['activateSequelPro'], app = 'Sequel Pro' },
+  { key = keyMap['activateSlack'], app = 'Slack' },
   { key = keyMap['activateStickies'], app = 'Stickies' }
 }, function(object)
   hs.hotkey.bind(hyper, object.key, function()
     hs.application.launchOrFocus(object.app)
   end)
-end)
-
--- Lock screen ==================================
-
-hs.hotkey.bind(hyper, keyMap['lockScreen'], function()
-  hs.caffeinate.lockScreen()
-end)
-
--- Caffeinate ===================================
-
-hs.hotkey.bind(hyper, keyMap['caffeinate'], nil, function()
-  if hs.caffeinate.toggle("displayIdle") then
-        hs.alert.show('Caffeinate enabled')
-    else
-        hs.alert.show('Caffeinate disabled')
-    end
-end)
-
--- Spotify ======================================
-
-hs.hotkey.bind(hyper, keyMap['skipSong'], nil, function()
-  hs.spotify.next()
 end)
 
 -- Watchers ===============================================

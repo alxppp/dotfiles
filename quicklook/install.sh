@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
-mkdir ~/Library/QuickLook
+cd "$(dirname "$(realpath "$0")")";
+
+mkdir -p ~/Library/QuickLook
 cp -r *.qlgenerator ~/Library/QuickLook/

@@ -54,7 +54,7 @@ prompt_context() {
 
   if [[ "$user" != "$DEFAULT_USER" || -n "$SSH_CONNECTION" ]]; then
     #prompt_segment red default " %(!.%{%F{yellow}%}.)$user@%m "
-    prompt_segment red default " %(!.%{%F{yellow}%}.)$user@BK4 "
+    prompt_segment red default " %(!.%{%F{yellow}%}.)$user@BK6 "
   fi
 }
 
@@ -119,7 +119,7 @@ need_push () {
 
 # Dir: current working directory
 directory_path() {
-  prompt_segment blue $PRIMARY_FG " $(cpwd)"
+  prompt_segment blue $PRIMARY_FG " $(pwd)"
 }
 
 battery_status() {
@@ -130,7 +130,7 @@ draw_prompt() {
   RETVAL=$?
 
   if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-    print -n "$(cpwd) $ "
+    print -n "$(pwd) $ "
   else
     CURRENT_BG='NONE'
     prompt_status

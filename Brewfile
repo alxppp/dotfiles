@@ -16,7 +16,6 @@ brew 'reattach-to-user-namespace'
 brew 'curl'
 brew 'wget'
 brew 'htop'
-brew 'ctop'
 
 # cask '1password'
 # cask 'adium'
