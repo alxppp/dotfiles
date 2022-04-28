@@ -2,7 +2,7 @@
     "editor.cursorBlinking": "smooth",
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "all",
-    "editor.tabSize": 8,
+    "editor.tabSize": 2,
     "editor.wordWrapColumn": 120,
     "git.autofetch": true,
     "gitlens.mode.statusBar.enabled": false,
@@ -29,8 +29,8 @@
     "vim.overrideCopy": false,
     "editor.fontSize": 14,
     "editor.cursorStyle": "line",
-    "editor.insertSpaces": false,
     "editor.lineNumbers": "on",
     "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-    "editor.wordWrap": "off"
+    "editor.wordWrap": "off",
+    "editorconfig.generateAuto": false
 }

@@ -1,0 +1,1 @@
+alias codemv='VISUAL="$EDITOR" vimv $*'
