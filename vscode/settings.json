@@ -32,5 +32,8 @@
     "editor.lineNumbers": "on",
     "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
     "editor.wordWrap": "off",
-    "editorconfig.generateAuto": false
+    "editor.stopRenderingLineAfter": 100000,
+    "editorconfig.generateAuto": false,
+    "git.confirmSync": false,
+    "window.commandCenter": true
 }
