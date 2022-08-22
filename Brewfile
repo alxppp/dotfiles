@@ -16,6 +16,7 @@ brew 'reattach-to-user-namespace'
 brew 'curl'
 brew 'wget'
 brew 'htop'
+brew 'cloudflare/cloudflare/cloudflared'
 
 # cask '1password'
 # cask 'adium'

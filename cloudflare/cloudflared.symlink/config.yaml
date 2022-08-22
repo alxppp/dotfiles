@@ -1,0 +1,7 @@
+tunnel: 94fc0802-21ca-4e57-ae8f-25a355fa0d79
+credentials-file: /Users/ap/.cloudflared/94fc0802-21ca-4e57-ae8f-25a355fa0d79.json
+
+ingress:
+  - hostname: bk6.alexpopp.com
+    service: ssh://localhost:22
+  - service: http_status:404
