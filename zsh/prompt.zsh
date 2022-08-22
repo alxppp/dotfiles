@@ -2,13 +2,6 @@ autoload colors && colors
 # cheers, @ehrenmurdick
 # http://github.com/ehrenmurdick/config/blob/master/zsh/prompt.zsh
 
-if (( $+commands[git] ))
-then
-  git="$commands[git]"
-else
-  git="/usr/bin/git"
-fi
-
 CURRENT_BG='NONE'
 PRIMARY_FG=black
 
@@ -54,7 +47,7 @@ prompt_context() {
 
   if [[ "$user" != "$DEFAULT_USER" || -n "$SSH_CONNECTION" ]]; then
     #prompt_segment red default " %(!.%{%F{yellow}%}.)$user@%m "
-    prompt_segment red default " %(!.%{%F{yellow}%}.)$user@BK6 "
+    prompt_segment red default " %(!.%{%F{white}%}.)$user@BK6 "
   fi
 }
 
@@ -66,64 +59,14 @@ prompt_status() {
   local symbols
   symbols=()
   [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}$CROSS"
-  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}$LIGHTNING"
+  [[ $UID -eq 0 ]] && symbols+="%{%F{black}%}$LIGHTNING"
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}$GEAR"
 
-            [[ -n "$symbols" ]] && prompt_segment $PRIMARY_FG default " $symbols "
+  [[ -n "$symbols" ]] && prompt_segment white $PRIMARY_FG " $symbols "
 }
 
-git_branch() {
-  echo $($git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
-}
-
-ggit() {
-  if [ -d .git ] || git rev-parse --git-dir > /dev/null 2>&1; then
-    prompt_segment green $PRIMARY_FG $(git_branch)
-  else
-    ""
-  fi
-}
-
-git_dirty() {
-  if $(! $git status -s &> /dev/null)
-  then
-    echo ""
-  else
-    if [[ $($git status --porcelain) == "" ]]
-    then
-      echo "on %{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
-    else
-      echo "on %{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}"
-    fi
-  fi
-}
-
-git_prompt_info () {
- ref=$($git symbolic-ref HEAD 2>/dev/null) || return
-# echo "(%{\e[0;33m%}${ref#refs/heads/}%{\e[0m%})"
- echo "${ref#refs/heads/}"
-}
-
-unpushed () {
-  $git cherry -v @{upstream} 2>/dev/null
-}
-
-need_push () {
-  if [[ $(unpushed) == "" ]]
-  then
-    echo " "
-  else
-    echo " with %{$fg_bold[magenta]%}unpushed%{$reset_color%} "
-  fi
-}
-
-# Dir: current working directory
 directory_path() {
   prompt_segment blue $PRIMARY_FG " $(pwd)"
-}
-
-battery_status() {
-  $ZSH/bin/battery-status
 }
 
 draw_prompt() {
@@ -136,13 +79,8 @@ draw_prompt() {
     prompt_status
     prompt_context
     directory_path
-    # ggit
     prompt_end
   fi
 }
 
 export PROMPT=$'$(draw_prompt) '
-
-precmd() {
-  title "zsh" "%m" "%55<...<%~"
-}
