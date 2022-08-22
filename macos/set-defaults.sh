@@ -173,14 +173,14 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bo
 # sudo systemsetup -settimezone "Europe/Brussels" > /dev/null
 
 # Stop iTunes from responding to the keyboard media keys
-launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
+# launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
 
 ###############################################################################
 # Energy saving                                                               #
 ###############################################################################
 
 # Enable lid wakeup
-sudo pmset -a lidwake 1
+# sudo pmset -a lidwake 1
 
 # Restart automatically on power loss
 sudo pmset -a autorestart 1
@@ -192,7 +192,7 @@ sudo systemsetup -setrestartfreeze on
 # sudo pmset -a displaysleep 15
 
 # Disable machine sleep while charging
-sudo pmset -c sleep 0
+# sudo pmset -c sleep 0
 
 # Set machine sleep to 5 minutes on battery
 # sudo pmset -b sleep 5
