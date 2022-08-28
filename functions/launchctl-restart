@@ -1,0 +1,5 @@
+service_path=$(launchctl list | awk '{print $NF}' | grep "$1" | head -n 1)
+launchctl stop $service_path
+sleep 1
+launchctl start $service_path
+echo "Restarted $service_path"
