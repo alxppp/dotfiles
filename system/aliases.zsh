@@ -8,3 +8,5 @@ then
   alias ll="gls -lAh --color"
   alias la='gls -A --color'
 fi
+
+alias flushdns="sudo killall -HUP mDNSResponder"
