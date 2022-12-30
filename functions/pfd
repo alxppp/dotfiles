@@ -5,8 +5,15 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
-osascript 2>/dev/null <<EOF
+posix_path=$(osascript 2>/dev/null -e '
   tell application "Finder"
     return POSIX path of (target of first window as text)
   end tell
-EOF
+')
+
+if [[ $posix_path == "/GoogleDrive"* ]]
+then
+  posix_path="/Volumes$posix_path"
+fi
+
+echo $posix_path
