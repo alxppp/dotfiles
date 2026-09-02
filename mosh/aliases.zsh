@@ -5,4 +5,5 @@ alias teshub='mosh teshub -- tmux attach -t 0 -d'
 # UDP can't traverse the jump, and the host firewall only admits SSH anyway.
 # tmux still gives the survives-disconnect part; new -ADs also creates the
 # session on a fresh generation instead of erroring.
-alias workload='ssh -t workload tmux new -ADs desktop'
+# -u: force UTF-8 even if a client session arrives with a broken locale
+alias workload='ssh -t workload tmux -u new -ADs desktop'
