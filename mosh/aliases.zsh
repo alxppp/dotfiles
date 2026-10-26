@@ -1,9 +1,27 @@
 alias mosh='mosh --predict=always --ssh="ssh -o RemoteCommand=none" $*'
 alias bk5='mosh bk5 -- tmux attach -t desktop -d'
 alias teshub='mosh teshub -- tmux attach -t 0 -d'
-# no mosh here: workload is a private bridge IP behind a ProxyJump — mosh's
-# UDP can't traverse the jump, and the host firewall only admits SSH anyway.
-# tmux still gives the survives-disconnect part; new -ADs also creates the
-# session on a fresh generation instead of erroring.
+# plain-ssh fallback: tmux gives the survives-disconnect part; new -ADs also
+# creates the session on a fresh generation instead of erroring.
 # -u: force UTF-8 even if a client session arrives with a broken locale
-alias workload='ssh -t workload tmux -u new -ADs desktop'
+alias workload-ssh='ssh -t workload tmux -u new -ADs desktop'
+
+# mosh into the workload generation. Plain `mosh workload` can't work: the
+# alias is a private bridge IP behind a ProxyJump, and mosh's UDP can't
+# traverse the jump. Instead, bootstrap mosh-server over the jump by hand and
+# point the UDP leg at the HOST's public IP, where a nat=true Incus proxy
+# device (managed by server repo scripts/promote-generation, range pinned
+# there and in group_vars workload_forward_udp_ports) forwards 61000-61004 to
+# whichever generation is live.
+function workload() {
+  local line
+  # NETWORK_TMOUT: an abandoned mosh-server exits after 7 days without an
+  # authenticated packet (lost-laptop hygiene); the tmux session survives.
+  line=$(command ssh workload -- MOSH_SERVER_NETWORK_TMOUT=604800 mosh-server new -p 61000:61004 -- \
+    tmux -u new -ADs desktop | grep '^MOSH CONNECT') || {
+    echo "mosh bootstrap failed — falling back to ssh+tmux" >&2
+    workload-ssh
+    return
+  }
+  MOSH_KEY=${line##* } command mosh-client 178.105.18.11 ${${(z)line}[3]}
+}
