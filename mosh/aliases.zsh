@@ -17,7 +17,11 @@ function workload() {
   local line
   # NETWORK_TMOUT: an abandoned mosh-server exits after 7 days without an
   # authenticated packet (lost-laptop hygiene); the tmux session survives.
-  line=$(command ssh workload -- MOSH_SERVER_NETWORK_TMOUT=604800 mosh-server new -p 61000:61004 -- \
+  # TERM + -c 256: the real mosh wrapper forwards the client terminal type
+  # and color depth; without them mosh-server emulates a colorless 8-color
+  # terminal (no tmux status bar background, gray/italics render white).
+  line=$(command ssh workload -- MOSH_SERVER_NETWORK_TMOUT=604800 TERM=${TERM:-xterm-256color} \
+    mosh-server new -c 256 -p 61000:61004 -- \
     tmux -u new -ADs desktop | grep '^MOSH CONNECT') || {
     echo "mosh bootstrap failed — falling back to ssh+tmux" >&2
     workload-ssh
